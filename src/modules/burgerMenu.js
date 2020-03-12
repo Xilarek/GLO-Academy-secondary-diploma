@@ -1,25 +1,26 @@
 'use strict';
-const burgerMenu = () =>{
+const burgerMenu = () => {
     const burgerButton = document.querySelector('.menu-button'),
-     boxMenuLink = document.querySelector('.hidden-small'),
-     topMenu = document.querySelector('.top-menu');
+        boxMenuLink = document.querySelector('.hidden-small'),
+        topMenu = document.querySelector('.top-menu');
 
     const windowSize = window.innerWidth;
-    if(windowSize <= 768 ) {
+    if (windowSize <= 768) {
         burgerButton.style.display = 'block';
-        boxMenuLink.style.display = 'none'; 
+        boxMenuLink.style.display = 'none';
     }
     //Липкое меню
-    window.onscroll =  () => scrollFunction();
     const sticky = topMenu.offsetTop;
-    
-    function scrollFunction() {
+    window.addEventListener('scroll', () => {
+
+        console.log(sticky);
         if (window.pageYOffset >= sticky) {
             topMenu.style.position = 'fixed';
-            
-          } else {
+
+        } else {
             topMenu.style.position = 'static';
-          }
         }
+    });
+
 };
 export default burgerMenu;
