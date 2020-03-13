@@ -14,3 +14,6 @@ promotionalСode();
 
 import modelRecording from './modules/modelRecording';
 modelRecording();
+
+import modelCallMe from './modules/modelCallMe';
+modelCallMe();
