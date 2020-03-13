@@ -20,7 +20,6 @@ const burgerMenu = () => {
     const sticky = topMenu.offsetTop;
     window.addEventListener('scroll', () => {
 
-        console.log(sticky);
         if (window.pageYOffset >= sticky) {
             topMenu.style.position = 'fixed';
 

@@ -11,3 +11,6 @@ burgerMenu();
 
 import promotionalСode from './modules/promotionalСode';
 promotionalСode();
+
+import modelRecording from './modules/modelRecording';
+modelRecording();
