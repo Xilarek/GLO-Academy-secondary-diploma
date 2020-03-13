@@ -17,14 +17,14 @@ const burgerMenu = () => {
         boxMenuLink.style.display = 'none';
     }
     //Липкое меню
+    const sticky = topMenu.offsetTop;
     window.addEventListener('scroll', () => {
 
-        if (topMenu.getBoundingClientRect().top < 1) {
-
+        console.log(sticky);
+        if (window.pageYOffset >= sticky) {
             topMenu.style.position = 'fixed';
 
-        } else if (topMenu.getBoundingClientRect().top === 97) {
-
+        } else {
             topMenu.style.position = 'static';
         }
     });
@@ -39,11 +39,10 @@ const burgerMenu = () => {
         if (target === btnMenuImg) {
             popUpMenu.style.display = 'flex';
         }
-        for (let i = 0; i < itemPopUp.length; i++) {
-            if (target === itemPopUp[i]) {
-                handlerMenu();
-            }
+        if (target.closest('a')) {
+            handlerMenu();
         }
+
         if (target === closeBtn) {
             handlerMenu();
         }

@@ -8,3 +8,6 @@ elementClosest(window);
 
 import burgerMenu from './modules/burgerMenu';
 burgerMenu();
+
+import promotionalСode from './modules/promotionalСode';
+promotionalСode();
