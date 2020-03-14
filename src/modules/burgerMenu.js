@@ -5,8 +5,6 @@ const burgerMenu = () => {
         popUpMenu = document.querySelector('.popup-menu'),
         btnMenuImg = document.querySelector('.btn-img'),
         closeBtn = document.querySelector('.close-menu-btn > img'),
-        itemUl = popUpMenu.querySelector('ul'),
-        itemPopUp = itemUl.querySelectorAll('.scroll > a'),
         boxMenuLink = document.querySelector('.hidden-small'),
         topMenu = document.querySelector('.top-menu');
 

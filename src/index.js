@@ -17,3 +17,28 @@ modelRecording();
 
 import modelCallMe from './modules/modelCallMe';
 modelCallMe();
+
+import Slider from './modules/mainSlider';
+const mainSliders = new Slider({
+    main: '.wrapper',
+    wrap: '.main-slider',
+    slidesToShow: 1,
+    infinity: true,
+    responsive: [{
+        breakpoint: 1024,
+        slideToShow: 1
+    },
+    {
+        breakpoint: 768,
+        slideToShow: 1
+    },
+    {
+        breakpoint: 576,
+        slideToShow: 1
+    }]
+});
+mainSliders.init();
+
+import appearanceArrow from './modules/appearanceArrow';
+appearanceArrow();
+
