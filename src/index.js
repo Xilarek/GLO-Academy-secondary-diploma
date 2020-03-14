@@ -42,3 +42,6 @@ mainSliders.init();
 import appearanceArrow from './modules/appearanceArrow';
 appearanceArrow();
 
+import dropDownMenu from './modules/dropDownMenu';
+dropDownMenu();
+
