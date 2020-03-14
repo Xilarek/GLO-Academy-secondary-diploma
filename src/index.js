@@ -18,9 +18,9 @@ modelRecording();
 import modelCallMe from './modules/modelCallMe';
 modelCallMe();
 
-import Slider from './modules/mainSlider';
+/*import Slider from './modules/mainSlider';
 const mainSliders = new Slider({
-    main: '.wrapper',
+    main: '.wrapper_slider',
     wrap: '.main-slider',
     slidesToShow: 1,
     infinity: true,
@@ -37,7 +37,7 @@ const mainSliders = new Slider({
         slideToShow: 1
     }]
 });
-mainSliders.init();
+mainSliders.init();*/
 
 import appearanceArrow from './modules/appearanceArrow';
 appearanceArrow();

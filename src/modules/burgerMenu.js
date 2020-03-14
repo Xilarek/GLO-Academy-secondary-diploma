@@ -1,7 +1,6 @@
 'use strict';
 const burgerMenu = () => {
     const burgerButton = document.querySelector('.menu-button'),
-        body = document.querySelector('body'),
         popUpMenu = document.querySelector('.popup-menu'),
         btnMenuImg = document.querySelector('.btn-img'),
         closeBtn = document.querySelector('.close-menu-btn > img'),
@@ -9,19 +8,22 @@ const burgerMenu = () => {
         topMenu = document.querySelector('.top-menu');
 
     const windowSize = window.innerWidth;
+    
 
     if (windowSize <= 768) {
         burgerButton.style.display = 'block';
         boxMenuLink.style.display = 'none';
     }
     //Липкое меню
-    const sticky = topMenu.offsetTop;
+    const positionFix = topMenu.offsetTop;
+    const heigthTopMenu = window.getComputedStyle(topMenu, null).height;
+    
     window.addEventListener('scroll', () => {
-
-        if (window.pageYOffset >= sticky) {
+        if (window.pageYOffset >= positionFix) {
             topMenu.style.position = 'fixed';
-
-        } else {
+            document.body.style.marginTop = heigthTopMenu;
+        }else{
+            document.body.style.marginTop = '0';
             topMenu.style.position = 'static';
         }
     });
@@ -31,7 +33,7 @@ const burgerMenu = () => {
         popUpMenu.style.display = 'none';
     };
 
-    body.addEventListener('click', (event) => {
+    document.body.addEventListener('click', (event) => {
         let target = event.target;
         if (target === btnMenuImg) {
             popUpMenu.style.display = 'flex';
