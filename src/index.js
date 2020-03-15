@@ -18,26 +18,28 @@ modelRecording();
 import modelCallMe from './modules/modelCallMe';
 modelCallMe();
 
-/*import Slider from './modules/mainSlider';
-const mainSliders = new Slider({
-    main: '.wrapper_slider',
-    wrap: '.main-slider',
-    slidesToShow: 1,
+/*import Carousel from './modules/carousel';
+const carousel = new Carousel({
+    main: '#wrapper',
+    wrap: '.services-slider-carousel',
+    pver: '.services-btn > prev',
+    next: '.services-btn > next',
+    slidesToShow: 5,
     infinity: true,
     responsive: [{
         breakpoint: 1024,
-        slideToShow: 1
+        slideToShow: 4
     },
     {
         breakpoint: 768,
-        slideToShow: 1
+        slideToShow: 3
     },
     {
         breakpoint: 576,
         slideToShow: 1
     }]
 });
-mainSliders.init();*/
+carousel.init();*/
 
 import appearanceArrow from './modules/appearanceArrow';
 appearanceArrow();
@@ -47,4 +49,7 @@ dropDownMenu();
 
 import photoGallery from './modules/photoGallery';
 photoGallery();
+
+import mainSlider from './modules/mainSlider';
+mainSlider();
 
