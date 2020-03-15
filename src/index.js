@@ -45,3 +45,6 @@ appearanceArrow();
 import dropDownMenu from './modules/dropDownMenu';
 dropDownMenu();
 
+import photoGallery from './modules/photoGallery';
+photoGallery();
+
