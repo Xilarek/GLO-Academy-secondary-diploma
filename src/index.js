@@ -53,3 +53,9 @@ photoGallery();
 import mainSlider from './modules/mainSlider';
 mainSlider();
 
+import mainSendForm from './modules/mainSendForm';
+mainSendForm();
+
+import validationInput from './modules/validationInput';
+validationInput();
+
