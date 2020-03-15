@@ -329,7 +329,7 @@
     <div class="gallery-bg">
         <div class="wrapper">
             <div class="gallery-slider">
-                <div class="slide">
+                <div class="slide slide-active">
                     <img src="images/gallery/photo1.jpg" alt="">
                 </div>
                 <div class="slide">
@@ -344,12 +344,15 @@
                 <div class="slide">
                     <img src="images/gallery/photo5.jpg" alt="">
                 </div>
+                <a href="#" class="gallery-btn prev" id="arrow-left"></a>
+                <a href="#" class="gallery-btn next" id="arrow-right"></a>
+                <ul class="gallery-dots"></ul>
             </div>
         </div>
     </div>
 </section>
 <section id="services">
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
         <h2>услуги наших клубов</h2>
         <div class="services-slider">
             <div class="slide">
@@ -403,6 +406,8 @@
                 <p>Йога - идеальны не только физическая форма, но и эмоциональное состояние</p>
             </div>
         </div>
+        <button class="services-btn prev glo-slider__prev"></button>
+        <button class="services-btn next glo-slider__next"></button>
     </div>
 </section>
 <section id="banner">
