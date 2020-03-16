@@ -22,8 +22,8 @@ import Carousel from './modules/carousel';
 const carousel = new Carousel({
     main: '#wrapper',
     wrap: '.services-slider-carousel',
-    pver: '.prev-left',
-    next: '.next-right',
+    pver: '.glo-slider__prev',
+    next: '.glo-slider__next',
     slidesToShow: 5,
     infinity: true,
     responsive: [{

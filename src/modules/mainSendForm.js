@@ -6,6 +6,7 @@ const mainSendForm = () => {
         formFooter = document.getElementById('footer_form'),
         modelWindow = document.getElementById('thanks'),
         textModelWindow = document.querySelector('.form-content > p');
+        
 
     const statusMessage = document.createElement('div');
         statusMessage.style.cssText = 'font-size: 1.2rem; color: #fff; padding-top: 10px';
@@ -41,17 +42,18 @@ const mainSendForm = () => {
             const formData = new FormData(form);
             let target = event.target;
 
-            if (target.matches('#banner-form') || target.matches('#form1') || target.matches('#form2') ||
-                target.matches('#footer_form') || target.matches('#card_order')) {
-                let allInputs = target.querySelectorAll('input');
-                for (let i = 0; i < allInputs.length; i++) {
-                    if (allInputs[i].value === '') {
-                        return;
-                    }
+            
+            let allInputs = form.querySelectorAll('input');
+            for (let i = 0; i < allInputs.length; i++) {
+                if (allInputs[i].value === '' && allInputs[i].id !== 'promocode') {
+                    return;
                 }
+                
             }
+            
 
-            if(form.querySelector('.personal-data')){
+            if(form.querySelector('.personal-data') && form !== formFooter){
+                console.log(1);
                 const checkPersonalData = form.querySelector('.personal-data');
 
                 if (!(checkPersonalData.querySelector('input').checked)) {
@@ -62,7 +64,10 @@ const mainSendForm = () => {
 
             let body = {};
             formData.forEach((value, key) => {
-                body[key] = value;
+                if(value){
+                    body[key] = value;
+                }
+                
             });
             setTimeout(() => {
                 statusMessage.remove();
