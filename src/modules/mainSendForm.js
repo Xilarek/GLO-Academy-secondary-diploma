@@ -2,20 +2,16 @@ const mainSendForm = () => {
     const form1 = document.getElementById('form1'),
         form2 = document.getElementById('form2'),
         form3 = document.getElementById('banner-form'),
+        formCardOrder = document.getElementById('card_order'),
         formFooter = document.getElementById('footer_form'),
-        check1 = document.getElementById('check1'),
-        check = document.getElementById('check'),
-        check2 = document.getElementById('check2'),
-        checkMozaika = document.getElementById('footer_leto_mozaika'),
-        checkSchelkovo = document.getElementById('footer_leto_schelkovo'),
         modelWindow = document.getElementById('thanks'),
         textModelWindow = document.querySelector('.form-content > p');
 
     const statusMessage = document.createElement('div');
         statusMessage.style.cssText = 'font-size: 1.2rem; color: #fff; padding-top: 10px';
 
-    const allForm = [form1, form2, form3, formFooter],
-        allCheck = [check, check1, check2, checkMozaika, checkSchelkovo];
+    const allForm = [form1, form2, form3, formFooter, formCardOrder];
+        
 
     //Обработка модельного окна при отправке формы
     const closeModal = () => {
@@ -38,14 +34,16 @@ const mainSendForm = () => {
         }
     });
 
-    for (let i = 0; i < allForm.length; i++) {
-        allForm[i].addEventListener('submit', (event) => {
+    allForm.forEach((form) => {
+        form.addEventListener('submit', (event) => {
             event.preventDefault();
-            allForm[i].append(statusMessage);
-            const formData = new FormData(allForm[i]);
+            const checkPersonalData = form.querySelector('.personal-data');
+            form.append(statusMessage);
+            const formData = new FormData(form);
             let target = event.target;
 
-            if (target.matches('#banner-form') || target.matches('#form1') || target.matches('#form2')) {
+            if (target.matches('#banner-form') || target.matches('#form1') || target.matches('#form2') ||
+                target.matches('#footer_form') || target.matches('#card_order')) {
                 let allInputs = target.querySelectorAll('input');
                 for (let i = 0; i < allInputs.length; i++) {
                     if (allInputs[i].value === '') {
@@ -62,15 +60,10 @@ const mainSendForm = () => {
                 statusMessage.remove();
             }, 5000);
 
-            
-                if (!(check.checked || check1.checked || check2.checked || checkMozaika.checked ||
-                     checkSchelkovo.checked)) {
-                    statusMessage.textContent = 'Подтвердите согласие на обработку персональных данных';
-                    allForm[i].reset();
-                    return;
-                }
-            
-            
+            if (!(checkPersonalData.checked)) {
+                statusMessage.textContent = 'Подтвердите согласие на обработку персональных данных';
+                return;
+            }
 
             statusMessage.textContent = 'Отправка данных на сервер';
 
@@ -92,9 +85,9 @@ const mainSendForm = () => {
                 textModelWindow.textContent = 'Ошибка при отправке данных на сервер';
 
             });
-            allForm[i].reset();
+            form.reset();
         });
-    }
+    });
 
 };
 export default mainSendForm;
