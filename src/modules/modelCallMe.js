@@ -15,7 +15,10 @@ const modelCallMe = () => {
 
         if (target.classList.contains('close_icon')) {
             closeModal();
-        } else {
+        }
+        if(target.classList.contains('btn-send')){
+            closeModal();
+        }else {
             target = target.closest('.form-content');
 
             if(!target){
