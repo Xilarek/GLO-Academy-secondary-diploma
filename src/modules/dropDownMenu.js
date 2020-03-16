@@ -1,18 +1,15 @@
 const dropDownMenu = () => {
-const clubList = document.querySelector('.clubs-list'),
-    clubUl = document.querySelector('.clubs-list > ul');
-    clubUl.classList.add('style-box');
+const clubUl = document.querySelector('.clubs-list > ul');
 
-    clubList.addEventListener('click', () => {
-        console.log(1);
-        let display = clubUl.style.display;
+document.addEventListener('click', (event) => {
+    let target = event.target;
 
-        if(display === 'none'){
-            clubUl.style.display = 'block';
-        }else {
-            clubUl.style.display = 'none';
-        }
-        
-    });
+    if(target.closest('.clubs-list')){
+        clubUl.style.display !== 'block' ? clubUl.style.display = 'block' : clubUl.style.display = 'none';
+    }else {
+        clubUl.style.display = 'none';
+        return;
+    }
+});
 };
 export default dropDownMenu;

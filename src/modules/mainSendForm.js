@@ -38,7 +38,6 @@ const mainSendForm = () => {
     allForm.forEach((form) => {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
-            const checkPersonalData = form.querySelector('.personal-data');
             form.append(statusMessage);
             const formData = new FormData(form);
             let target = event.target;
@@ -53,6 +52,15 @@ const mainSendForm = () => {
                 }
             }
 
+            if(form.querySelector('.personal-data')){
+                const checkPersonalData = form.querySelector('.personal-data');
+
+                if (!(checkPersonalData.querySelector('input').checked)) {
+                    statusMessage.textContent = 'Подтвердите согласие на обработку персональных данных';
+                    return;
+                }
+            }
+
             let body = {};
             formData.forEach((value, key) => {
                 body[key] = value;
@@ -60,12 +68,8 @@ const mainSendForm = () => {
             setTimeout(() => {
                 statusMessage.remove();
             }, 5000);
-
-            if (!(checkPersonalData.checked)) {
-                statusMessage.textContent = 'Подтвердите согласие на обработку персональных данных';
-                return;
-            }
-
+            
+            
             statusMessage.textContent = 'Отправка данных на сервер';
 
             const postData = body => fetch('./server_id.php', {
