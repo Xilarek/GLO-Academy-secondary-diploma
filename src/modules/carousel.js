@@ -22,7 +22,8 @@ class Carousel {
             maxPosition: this.slides.length - this.slidesToShow
         };
         this.responsive = responsive;
-        
+        console.log(this.next);
+        console.log(this.prev);
     }
     //Панель вызовова методов
     init(){
@@ -66,7 +67,6 @@ class Carousel {
               will-change: transform !important;  
             }
             .glo-slider__item{
-                display: flex !important;
                 align-items: center;
                 justify-content: center;
                 align-items: center;
