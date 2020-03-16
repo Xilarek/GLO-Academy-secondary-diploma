@@ -60,5 +60,5 @@ import validationInput from './modules/validationInput';
 validationInput();
 
 import calc from './modules/calc';
-calc();
+//calc();
 

@@ -6,6 +6,7 @@ const mainSendForm = () => {
         formFooter = document.getElementById('footer_form'),
         modelWindow = document.getElementById('thanks'),
         textModelWindow = document.querySelector('.form-content > p');
+        console.log(formCardOrder);
 
     const statusMessage = document.createElement('div');
         statusMessage.style.cssText = 'font-size: 1.2rem; color: #fff; padding-top: 10px';
