@@ -18,12 +18,12 @@ modelRecording();
 import modelCallMe from './modules/modelCallMe';
 modelCallMe();
 
-/*import Carousel from './modules/carousel';
+import Carousel from './modules/carousel';
 const carousel = new Carousel({
     main: '#wrapper',
     wrap: '.services-slider-carousel',
-    pver: '.services-btn > prev',
-    next: '.services-btn > next',
+    pver: '.prev-left',
+    next: '.next-right',
     slidesToShow: 5,
     infinity: true,
     responsive: [{
@@ -39,7 +39,7 @@ const carousel = new Carousel({
         slideToShow: 1
     }]
 });
-carousel.init();*/
+carousel.init();
 
 import appearanceArrow from './modules/appearanceArrow';
 appearanceArrow();
