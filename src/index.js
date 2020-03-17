@@ -27,17 +27,18 @@ const carousel = new Carousel({
     slidesToShow: 5,
     infinity: true,
     responsive: [{
-        breakpoint: 1024,
-        slideToShow: 4
-    },
-    {
-        breakpoint: 768,
-        slideToShow: 3
-    },
-    {
-        breakpoint: 576,
-        slideToShow: 1
-    }]
+            breakpoint: 1024,
+            slideToShow: 4
+        },
+        {
+            breakpoint: 768,
+            slideToShow: 3
+        },
+        {
+            breakpoint: 576,
+            slideToShow: 1
+        }
+    ]
 });
 carousel.init();
 

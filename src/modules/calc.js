@@ -1,6 +1,6 @@
 const calc = () => {
-    
-    const calcForm = document.getElementById('card_order'),
+    if ( document.querySelector('html').id === 'main'){
+        const calcForm = document.getElementById('card_order'),
         clubMozaika = document.getElementById('card_leto_mozaika'),
         clubSchelkovo = document.getElementById('card_leto_schelkovo'),
         price = document.getElementById('price-total'),
@@ -87,5 +87,7 @@ const calc = () => {
         price.textContent = total;
 
     };
+    }
+    
 };
 export default calc;

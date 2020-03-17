@@ -22,8 +22,7 @@ class Carousel {
             maxPosition: this.slides.length - this.slidesToShow
         };
         this.responsive = responsive;
-        console.log(this.next);
-        console.log(this.prev);
+        
     }
     //Панель вызовова методов
     init(){

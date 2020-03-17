@@ -1,7 +1,7 @@
 const modelRecording = () => {
     const visitBtn = document.querySelector('.free-visit'),
         formVisit = document.getElementById('free_visit_form');
-       
+
 
     visitBtn.addEventListener('click', () => {
         formVisit.style.display = 'block';
@@ -17,7 +17,7 @@ const modelRecording = () => {
         if (target.classList.contains('close_icon')) {
             closeModal();
         }
-        if(target.classList.contains('btn-send')){
+        if (target.classList.contains('btn-send')) {
             closeModal();
         } else {
             target = target.closest('.form-content');
