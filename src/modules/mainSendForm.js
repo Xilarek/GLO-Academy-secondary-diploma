@@ -5,6 +5,8 @@ const mainSendForm = () => {
         formCardOrder = document.getElementById('card_order'),
         formFooter = document.getElementById('footer_form'),
         modelWindow = document.getElementById('thanks'),
+        modelCallbackForm = document.getElementById('callback_form'),
+        formVisit = document.getElementById('free_visit_form'),
         textModelWindow = document.querySelector('.form-content > p');
 
     const statusMessage = document.createElement('div');
@@ -85,6 +87,9 @@ const mainSendForm = () => {
                     throw new Error('status network not 200');
                 }
                 modelWindow.style.display = 'block';
+                modelCallbackForm.style.display = 'none';
+                formVisit.style.display = 'none';
+
             }, () => {
                 modelWindow.style.display = 'block';
                 textModelWindow.textContent = 'Ошибка при отправке данных на сервер';

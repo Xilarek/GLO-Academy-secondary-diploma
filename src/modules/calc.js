@@ -20,7 +20,7 @@ const calc = () => {
     });
 
     if(promocodeInput){
-        promocodeInput.addEventListener('change', (event) => {
+        promocodeInput.addEventListener('input', (event) => {
             const target = event.target;
     
             if (target.value === 'ТЕЛО2020') {
@@ -65,7 +65,7 @@ const calc = () => {
                 if (item.checked) {
                     switch (item.checked) {
                         case item.value == 1:
-                            card = 2990;
+                            card = 2999;
                             break;
                         case item.value == 6:
                             card = 14990;
@@ -77,7 +77,7 @@ const calc = () => {
                             card = 24990;
                             break;
                         default:
-                            card = 2990;
+                            card = 2999;
                     }
                 }
             });

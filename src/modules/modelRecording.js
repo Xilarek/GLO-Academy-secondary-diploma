@@ -16,9 +16,6 @@ const modelRecording = () => {
 
         if (target.classList.contains('close_icon')) {
             closeModal();
-        }
-        if (target.classList.contains('btn-send')) {
-            closeModal();
         } else {
             target = target.closest('.form-content');
 
