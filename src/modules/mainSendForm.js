@@ -10,7 +10,7 @@ const mainSendForm = () => {
         textModelWindow = document.querySelector('.form-content > p');
 
     const statusMessage = document.createElement('div');
-    statusMessage.style.cssText = 'font-size: 1.2rem; color: #fff; padding-top: 10px';
+    statusMessage.style.cssText = 'font-size: 1.2rem; color: #2F4F4F; padding-top: 10px';
 
     const allForm = [form1, form2, form3, formFooter, formCardOrder];
 
@@ -46,9 +46,12 @@ const mainSendForm = () => {
             let allInputs = form.querySelectorAll('input');
             for (let i = 0; i < allInputs.length; i++) {
                 if (allInputs[i].value === '' && allInputs[i].id !== 'promocode') {
+                    statusMessage.textContent = 'Пожалуйста заполните форму';
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 5000);
                     return;
                 }
-
             }
 
             if (form.querySelector('.personal-data') && form !== formFooter) {
@@ -70,7 +73,6 @@ const mainSendForm = () => {
             setTimeout(() => {
                 statusMessage.remove();
             }, 5000);
-
 
             statusMessage.textContent = 'Отправка данных на сервер';
 

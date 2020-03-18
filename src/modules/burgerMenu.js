@@ -2,7 +2,7 @@
 const burgerMenu = () => {
     const burgerButton = document.querySelector('.menu-button'),
         popUpMenu = document.querySelector('.popup-menu'),
-        btnMenuImg = document.querySelector('.btn-img'),
+        btnMenuImg = document.getElementById('burger'),
         closeBtn = document.querySelector('.close-menu-btn > img'),
         boxMenuLink = document.querySelector('.hidden-small'),
         topMenu = document.querySelector('.top-menu');
